@@ -1,0 +1,989 @@
+.cover {
+	+ .intro {
+		margin-top: 40px;
+	
+		@include breakpoint(tablet) {
+			margin-top: 80px;
+		}
+	}
+
+	.wrapper {
+		position: relative;
+
+		.title-cover {
+			pointer-events: none;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: initial;
+		}
+	}
+
+	.image-inside {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		.trigger-modal {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+			background: transparent;
+			outline: 0;
+			padding: 0;
+			min-height: 0;
+			cursor: pointer;
+		}
+
+		.boat {
+			position: absolute;
+			width: 74.4%;
+			height: 7.3%;
+			top: 33%;
+			left: initial;
+			right: 0;
+			bottom: initial;
+
+			@include breakpoint(wide) {
+				width: 44.6%;
+				height: 9.7%;
+				top: 32.3%;
+				left: initial;
+				right: 0;
+				bottom: initial;
+			}
+
+			&:hover {
+				@include breakpoint(desktop) {
+					animation: moving-alt 1.2s infinite;
+				}
+			}
+
+			&:before {
+				@include breakpoint(width-tablet-landscape) {
+					content: "";
+					position: absolute;
+					z-index: -1;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: initial;
+					right: 0;
+					bottom: initial;
+					background-image: url('../assets/img/graphics/mobile/cover_boat-mobile2.png');
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+					animation: blink 1.5s infinite linear;
+				}
+			}
+		}
+
+		.motor {
+			position: absolute;
+			width: 69.5%;
+			height: 24.5%;
+			top: initial;
+			left: -9.2%;
+			right: initial;
+			bottom: 41.9%;
+			
+			@include breakpoint(wide) {
+				width: 44.9%;
+				height: 44.9%;
+				top: initial;
+				left: initial;
+				right: 3%;
+				bottom: 17.6%;
+			}
+
+			&:hover {
+				@include breakpoint(desktop) {
+					animation: moving 1.2s infinite;
+				}
+			}
+
+			&:before {
+				@include breakpoint(width-tablet-landscape) {
+					content: "";
+					position: absolute;
+					z-index: 0;
+					width: 102.5%;
+					height: 104%;
+					top: -2.1%;
+					left: initial;
+					right: -1.1%;
+					bottom: initial;
+					background-image: url('../assets/img/graphics/mobile/cover_motor-mobile2.png');
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+					animation: blink-2 1.5s infinite linear;
+				}
+			}
+
+			img {
+				@include breakpoint(width-tablet-landscape) {
+					z-index: 0;
+					position: relative;
+				}
+			}
+		}
+
+		.car {
+			position: absolute;
+			width: 90%;
+			height: 40.2%;
+			top: initial;
+			left: 7%;
+			right: 0;
+			bottom: 8.6%;
+			
+			@include breakpoint(wide) {
+				width: 48.5%;
+				height: 61.7%;
+				top: initial;
+				left: 3%;
+				right: 0;
+				bottom: 12%;
+			}
+
+			&:hover {
+				@include breakpoint(desktop) {
+					animation: moving 1.2s infinite;
+				}
+			}
+
+			&:before {
+				@include breakpoint(width-tablet-landscape) {
+					content: "";
+					position: absolute;
+					z-index: 0;
+					width: 102%;
+					height: 105%;
+					top: -2.3%;
+					left: initial;
+					right: -1.1%;
+					bottom: initial;
+					background-image: url('../assets/img/graphics/mobile/cover_car-mobile2.png');
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+					animation: blink 1.5s infinite linear;
+				}
+			}
+
+			img {
+				@include breakpoint(width-tablet-landscape) {
+					z-index: 0;
+					position: relative;
+				}
+			}
+		}
+	}
+
+	.image-stars {
+		pointer-events: none;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		.one {
+			animation: blink 1.5s infinite;
+		}
+
+		.two {
+			animation: blink-2 1.5s infinite;
+		}
+	}
+}
+
+.intro {
+	padding: 40px 0;
+	
+	@include breakpoint(tablet) {
+		padding: 80px 0;
+	}
+
+	h4 {
+		font-size: 1.4em;
+		line-height: 130%;
+		letter-spacing: 0.5pt;
+		
+		@include breakpoint(small-mobile) {
+			font-size: 1.3em;
+		}
+
+		@include breakpoint(tablet) {
+			font-size: 2.2em;
+		}
+	}
+}
+
+.thumbnails {
+	padding: 40px 0;
+	
+	@include breakpoint(tablet) {
+		padding: 80px 0;
+	}
+
+	.title-thumbnails {
+		position: relative;
+
+		+ .content-thumbnails,
+		+ .content-slider {
+			margin-top: 30px;
+			
+			@include breakpoint(tablet) {
+				margin-top: 50px;
+			}
+		}
+
+		h3 {
+			font-size: 2.1em;
+			line-height: 100%;
+			text-transform: uppercase;
+			position: relative;
+			z-index: 1;
+			display: inline-block;
+			padding: 0 15px;
+			background-color: $body-background-alt;
+			max-width: 70%;
+
+			@include breakpoint(small-mobile) {
+				max-width: 76%;
+			}
+
+			@include breakpoint(tablet) {
+				font-size: 3.6em;
+				padding: 0 30px;
+				max-width: 100%;
+			}
+		}
+
+		.line {
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: initial;
+			right: initial;
+			bottom: 0;
+			width: 40%;
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				bottom: initial;
+				background-color: #ED1C24;
+				width: 100%;
+				height: 8px;
+				transform: translate(0, -50%);
+				
+				@include breakpoint(tablet) {
+					height: 14px;
+				}
+			}
+
+			&.left {
+				left: 0;
+			}
+
+			&.right {
+				right: 0;
+			}
+		}
+	}
+
+	.content-thumbnails {
+		.wrapper-thumbnails {
+			padding: 16px 5px;
+			
+			@include breakpoint(tablet) {
+				padding: 30px 15px;
+			}
+			
+			@include breakpoint(wide) {
+				padding: 0 15px;
+			}
+		}
+
+		h5 {
+			font-size: 1.8em;
+			line-height: 100%;
+			
+			@include breakpoint(tablet) {
+				font-size: 2.6em;
+			}
+
+			+ .image-thumb {
+				margin-top: 30px;
+			}
+		}
+
+		p {
+			margin: 0;
+			font-size: 1.1em;
+			line-height: 140%;
+			
+			@include breakpoint(tablet) {
+				font-size: 1.5em;
+			}
+		}
+
+		.image-thumb {
+			position: relative;
+
+			+ p {
+				margin-top: 30px;
+			}
+
+			&.margin-left-right {
+				margin-left: 25.7%;
+				margin-right: 25.7%;
+				
+				@include breakpoint(tablet) {
+					margin-left: 21%;
+					margin-right: 21%;
+				}
+				
+				@include breakpoint(wide) {
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+
+			&.hover {
+				.before-hover {
+					@include breakpoint(desktop) {
+						opacity: 0;
+						visibility: hidden;
+						pointer-events: none;
+					}
+				}
+
+				.after-hover {
+					@include breakpoint(desktop) {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+			}
+
+			.before-hover {
+				@include breakpoint(desktop) {
+					transition: all 0.3s linear;
+				}
+			}
+
+			.after-hover {
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: initial;
+				
+				@include breakpoint(desktop) {
+					opacity: 0;
+					visibility: hidden;
+					pointer-events: none;
+					transition: all 0.3s linear;
+				}
+		
+				@include breakpoint(width-tablet-landscape) {
+					animation: blink-3 normal 3.5s infinite ease-in-out;
+				}
+			}
+		}
+	}
+
+	.content-slider {
+		.slick-slide {
+			&:first-child {
+				.product-name {
+					&:after {
+						content: "";
+						width: 6px;
+						height: 17px;
+						position: absolute;
+						top: initial;
+						bottom: -7px;
+						left: 0;
+						right: initial;
+						background-color: #BE1E2D;
+						border: 1px solid $modal-orange;
+					}
+				}
+			}
+
+			&:last-child {
+				.product-name {
+					&:after {
+						content: "";
+						width: 6px;
+						height: 17px;
+						position: absolute;
+						top: initial;
+						bottom: -7px;
+						left: initial;
+						right: 0;
+						background-color: #BE1E2D;
+						border: 1px solid $modal-orange;
+					}
+				}
+			}
+		}
+
+		.product-name {
+			position: relative;
+			padding-bottom: 30px;
+
+			&:before {
+				content: "";
+				width: 100%;
+				height: 3px;
+				position: absolute;
+				top: initial;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background-color: $modal-orange;
+			
+				@include breakpoint(tablet) {
+					height: 4px;
+				}
+			}
+
+			h5 {
+				font-size: 1.6em;
+				
+				@include breakpoint(tablet) {
+					font-size: 2em;
+				}
+			}
+
+			p {
+				margin: 0;
+				font-size: 1.2em;
+				
+				@include breakpoint(tablet) {
+					font-size: 1.5em;
+				}
+			}
+		}
+
+		.product-image {
+			position: relative;
+			padding-top: 40px;
+			
+			@include breakpoint(tablet) {
+				padding-top: 60px;
+			}
+
+			// &:before {
+			// 	content: "";
+			// 	width: 1px;
+			// 	height: 75%;
+			// 	position: absolute;
+			// 	z-index: -1;
+			// 	top: 0;
+			// 	bottom: 0;
+			// 	left: 50%;
+			// 	right: initial;
+			// 	background-color: $modal-orange;
+			// }
+
+			&:after {
+				content: "";
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				top: -12px;
+				bottom: initial;
+				left: 50%;
+				right: initial;
+				margin-left: -10px;
+				border: 1px solid $modal-orange;
+				background-color: #BE1E2D;
+				border-radius: 100%;
+			}
+
+			.product-area {
+				position: relative;
+				width: 100%;
+				height: 0;
+				padding: 0 0 68%;
+			}
+
+			.wrapper {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				overflow: hidden;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: 50% 20%;
+			}
+		}
+	}
+}
+
+.events {
+	position: relative;
+	padding-top: 40px;
+	
+	@include breakpoint(tablet) {
+		padding-top: 80px;
+	}
+
+	.bg-stripe {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: url('../assets/img/graphics/full/bg-stripe.jpg');
+		background-position: center;
+		background-repeat: repeat-y;
+		background-size: contain;
+	}
+
+	.button-area {
+		position: relative;
+		margin: 40px 0;
+
+		@include breakpoint(tablet) {
+			margin: 100px 0;
+		}
+
+		.button {
+			display: inline-block;
+			font-size: 1.6em;
+			text-transform: uppercase;
+			color: $white;
+			padding: 6px 30px 8px;
+			background-color: $body-background;
+			border: 2px solid $modal-orange;
+			outline: 0;
+			border-radius: 30px;
+			box-shadow: none;
+			transition: all 0.5s linear;
+			
+			@include breakpoint(tablet) {
+				font-size: 2.6em;
+				padding: 6px 60px 10px;
+				border-radius: 40px;
+			}
+
+			&:hover {
+				@include breakpoint(desktop) {
+					background-color: $maroon;
+				}
+			}
+		}
+	}
+
+	.wrapper {
+		position: relative;
+
+		.image-title {
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			.image-floating {
+				pointer-events: none;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+		}
+
+		.image-inside {
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			.motor {
+				position: absolute;
+				width: 78.3%;
+				height: 19.8%;
+				top: 32.6%;
+				left: initial;
+				right: 10%;
+				bottom: initial;
+
+				@include breakpoint(wide) {
+					width: 39.8%;
+					height: 20.9%;
+					top: 30.1%;
+					left: initial;
+					right: 9.1%;
+					bottom: initial;
+				}
+
+				&.hover {
+					.before-hover {
+						@include breakpoint(desktop) {
+							opacity: 0;
+							visibility: hidden;
+							pointer-events: none;
+						}
+					}
+
+					.after-hover {
+						@include breakpoint(desktop) {
+							opacity: 1;
+							visibility: visible;
+						}
+					}
+				}
+			}
+
+			.car {
+				position: absolute;
+				width: 81.4%;
+				height: 17.8%;
+				top: 14.9%;
+				left: 14.9%;
+				right: initial;
+				bottom: initial;
+
+				@include breakpoint(wide) {
+					width: 45.9%;
+					height: 20.3%;
+					top: 31.1%;
+					left: 5.4%;
+					right: initial;
+					bottom: initial;
+				}
+
+				&.hover {
+					.before-hover {
+						@include breakpoint(desktop) {
+							opacity: 0;
+							visibility: hidden;
+							pointer-events: none;
+						}
+					}
+
+					.after-hover {
+						@include breakpoint(desktop) {
+							opacity: 1;
+							visibility: visible;
+						}
+					}
+				}
+			}
+
+			.before-hover {
+				@include breakpoint(desktop) {
+					transition: all 0.3s linear;
+				}
+			}
+
+			.after-hover {
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: initial;
+				
+				@include breakpoint(desktop) {
+					opacity: 0;
+					visibility: hidden;
+					pointer-events: none;
+					transition: all 0.3s linear;
+				}
+		
+				@include breakpoint(width-tablet-landscape) {
+					animation: blink-3 normal 3.5s infinite ease-in-out;
+				}
+			}
+		}
+
+		.image-bottom {
+			pointer-events: none;
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			.image-floating {
+				pointer-events: none;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+		}
+	}
+}
+
+.cover-bottom {
+	position: relative;
+
+	+ .intro {
+		margin-top: 40px;
+	
+		@include breakpoint(tablet) {
+			margin-top: 80px;
+		}
+	}
+
+	.bg-stripe {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: initial;
+		width: 100%;
+		height: 50%;
+		background-image: url('../assets/img/graphics/full/bg-stripe.jpg');
+		background-position: center;
+		background-repeat: repeat-y;
+		background-size: contain;
+	}
+
+	.wrapper {
+		position: relative;
+
+		.title-cover {
+			pointer-events: none;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: initial;
+		}
+	}
+
+	.image-inside {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		.trigger-modal {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+			background: transparent;
+			outline: 0;
+			padding: 0;
+			min-height: 0;
+			cursor: pointer;
+		}
+
+		.boat {
+			position: absolute;
+			width: 100%;
+			height: 11.7%;
+			top: 18.8%;
+			left: initial;
+			right: -9.6%;
+			bottom: initial;
+			
+			@include breakpoint(wide) {
+				width: 47.6%;
+				height: 12.1%;
+				top: 30.6%;
+				left: initial;
+				right: 0;
+				bottom: initial;
+			}
+
+			&:hover {
+				@include breakpoint(desktop) {
+					animation: moving-alt 1.2s infinite;
+				}
+			}
+
+			&:before {
+				@include breakpoint(width-tablet-landscape) {
+					content: "";
+					position: absolute;
+					z-index: -1;
+					width: 102%;
+					height: 106.4%;
+					top: -3.6%;
+					left: initial;
+					right: 4.1%;
+					bottom: initial;
+					background-image: url('../assets/img/graphics/mobile/coverbottom_boat-mobile2.png');
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+					animation: blink 1.5s infinite linear;
+				}
+			}
+		}
+
+		.motor {
+			position: absolute;
+			width: 73.9%;
+			height: 31.4%;
+			top: initial;
+			left: initial;
+			right: 11.1%;
+			bottom: 38.8%;
+			
+			@include breakpoint(wide) {
+				width: 38.7%;
+				height: 35.5%;
+				top: initial;
+				left: initial;
+				right: 7.7%;
+				bottom: 18.6%;
+			}
+
+			&:hover {
+				@include breakpoint(desktop) {
+					animation: moving 1.2s infinite;
+				}
+			}
+
+			&:before {
+				@include breakpoint(width-tablet-landscape) {
+					content: "";
+					position: absolute;
+					z-index: 0;
+					width: 102.5%;
+					height: 104%;
+					top: -2.1%;
+					left: initial;
+					right: -1.1%;
+					bottom: initial;
+					background-image: url('../assets/img/graphics/mobile/coverbottom_motor-mobile2.png');
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+					animation: blink-2 1.5s infinite linear;
+				}
+			}
+
+			img {
+				@include breakpoint(width-tablet-landscape) {
+					z-index: 0;
+					position: relative;
+				}
+			}
+		}
+
+		.car {
+			position: absolute;
+			width: 71.7%;
+			height: 35.5%;
+			top: initial;
+			left: 14%;
+			right: 0;
+			bottom: 6.2%;
+			
+			@include breakpoint(wide) {
+				width: 46%;
+				height: 49.1%;
+				top: initial;
+				left: 6%;
+				right: 0;
+				bottom: 19.2%;
+			}
+
+			&:hover {
+				@include breakpoint(desktop) {
+					animation: left-right normal 1.4s infinite linear;
+				}
+			}
+
+			&:before {
+				@include breakpoint(width-tablet-landscape) {
+					content: "";
+					position: absolute;
+					z-index: 0;
+					width: 102.7%;
+					height: 106.3%;
+					top: -3.2%;
+					left: initial;
+					right: -1.5%;
+					bottom: initial;
+					background-image: url('../assets/img/graphics/mobile/coverbottom_car-mobile2.png');
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+					animation: blink 1.5s infinite linear;
+				}
+			}
+
+			img {
+				@include breakpoint(width-tablet-landscape) {
+					z-index: 0;
+					position: relative;
+				}
+			}
+		}
+	}
+
+	.image-stars {
+		pointer-events: none;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		.one {
+			animation: blink 1.5s infinite;
+		}
+
+		.two {
+			animation: blink-2 1.5s infinite;
+		}
+	}
+}
+
+.audio-area {
+	display: none;
+}
+

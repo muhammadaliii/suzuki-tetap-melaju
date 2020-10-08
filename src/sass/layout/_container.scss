@@ -1,0 +1,290 @@
+:focus {
+	outline: 0;
+}
+
+html {
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+body {
+	font-family: 'montserrat_medium';
+	color: $body-color;
+	background-color: $body-background-alt;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+main {
+	&:focus {
+		outline: 0;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $primary;
+	transition: all 0.3s linear;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+h3,
+h4,
+h5 {
+	line-height: 120%;
+}
+
+p {
+	line-height: 130%;
+}
+
+ul,
+ol {
+	margin: 0;
+
+	&.flat {
+		li {
+			display: inline-block;
+			margin: 0 8px 0 0;
+		}
+	}
+}
+
+.font-text-bold {
+	font-family: 'montserrat_bold';
+}
+
+.font-text-black {
+	font-family: 'montserrat_extrabold';
+}
+
+.font-text-regular {
+	font-family: 'montserrat_regular';
+}
+
+.font-text-alt {
+	font-family: 'shrikhand_regular';
+}
+
+.container {
+	padding: 0 16px;
+
+	@include breakpoint(tablet) {
+		padding: 0;
+	}
+}
+
+.container-fluid {
+	@include breakpoint(tablet) {
+		padding: 0 30px;
+	}
+
+	@include breakpoint(desktop) {
+		padding: 0 60px;
+	}
+
+	&.full-width {
+		padding: 0;
+	}
+}
+
+section {
+	overflow: hidden;
+	
+	&.hiding {
+		display: none;
+	}
+}
+
+.show-mobile {
+	display: block!important;
+
+	@include breakpoint(wide) {
+		display: none!important;
+	}
+}
+
+.show-desktop {
+	display: none!important;
+
+	@include breakpoint(wide) {
+		display: block!important;
+	}
+}
+
+.progressive-image {
+	width: 100%;
+}
+
+.image-background {
+	position: relative;
+}
+
+.image-floating {
+	position: absolute;
+	z-index: 1;
+}
+
+.margin-top {
+	margin-top: 40px;
+	
+	@include breakpoint(tablet) {
+		margin-top: 60px;
+	}
+	
+	@include breakpoint(wide) {
+		margin-top: 80px;
+	}
+}
+
+.selector {
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+
+	&.fixed-height {
+		position: relative;
+		height: 0;
+		padding: 0 0 140%;
+
+		img {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			bottom: initial;
+			transform: translate(0, -50%);
+		}
+
+		&:hover {
+			.image-background {
+				transform: translate(0, -50%) scale(1.1);
+			}
+		}
+	}
+
+	&:hover {
+		.overlay-bg {
+			@include breakpoint(wide) {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: visible;
+			}
+
+			.bracket {
+				&.top {
+					&:before,
+					&:after {
+						@include breakpoint(wide) {
+							opacity: 1;
+							visibility: visible;
+							top: 20px;
+							left: 20px;
+						}
+					}
+				}
+
+				&.bottom {
+					&:before,
+					&:after {
+						@include breakpoint(wide) {
+							opacity: 1;
+							visibility: visible;
+							bottom: 20px;
+							right: 20px;
+						}
+					}
+				}
+			}
+		}
+
+		.hover-icon {
+			@include breakpoint(wide) {
+				opacity: 1;
+				visibility: visible;
+				transform: translate(-50%, -50%) scale(1) rotate(0);
+			}
+
+			.icon {
+				display: inline-block;
+				width: 60px;
+				height: 60px;
+				background: url('../assets/img/icon-hover.png') center no-repeat;
+				background-size: contain;
+			}
+		}
+
+		.image-background {
+			@include breakpoint(wide) {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.image-background {
+		transition: all 0.3s linear;
+	}
+
+	.overlay-bg {
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		background-color: rgba(0,0,0,0.6);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: all 0.3s linear;
+	}
+
+	.overlay-mobile {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		.icon {
+			font-size: 0.85em;
+			text-align: center;
+			color: $white;
+			line-height: 24px;
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			top: initial;
+			bottom: 0;
+			left: initial;
+			right: 0;
+			background-color: rgba(0, 0, 0, 0.4);
+			border-top-left-radius: 4px;
+
+			span {
+				opacity: 0.8;
+			}
+		}
+	}
+
+	.hover-icon {
+		position: absolute;
+		top: 50%;
+		bottom: initial;
+		left: 50%;
+		right: initial;
+		transition: all 0.4s linear;
+		transform: translate(-50%, -50%) scale(0.3) rotate(60deg);
+	}
+}

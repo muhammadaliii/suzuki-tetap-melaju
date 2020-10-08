@@ -1,0 +1,110 @@
+.modal {
+	&.orange {
+		.modal-content {
+			background-color: $modal-orange;
+		}
+	}
+
+	&.purple {
+		.modal-content {
+			background-color: $modal-purple;
+		}
+	}
+
+	.modal-body {
+		padding: 15px 20px 20px;
+
+		@include breakpoint(tablet) {
+			padding: 20px 40px 40px;
+		}
+	}
+
+	.modal-dialog {
+		height: auto;
+	}
+
+	.modal-content {
+		border-radius: 20px;
+
+		.modal-title {
+			h5 {
+				font-size: 2.4em;
+				padding-right: 20px;
+				line-height: 100%;
+				
+				@include breakpoint(tablet) {
+					font-size: 3em;
+					padding-right: 30px;
+				}
+			}
+
+			+ .modal-image {
+				margin-top: 30px;
+			}
+		}
+
+		.modal-image {
+			text-align: center;
+
+			+ .modal-desc {
+				margin-top: 30px;
+			}
+
+			img {
+				max-width: 70%;
+			}
+		}
+
+		.modal-desc {
+			text-align: center;
+			color: $white;
+
+			p {
+				font-size: 1.2em;
+				line-height: 130%;
+				letter-spacing: 0.5pt;
+				margin: 0;
+
+				@include breakpoint(small-mobile) {
+					font-size: 1.1em;
+				}
+
+				@include breakpoint(tablet) {
+					font-size: 1.4em;
+				}
+			}
+		}
+	}
+
+	.close {
+		font-size: 3em;
+		color: $white;
+		display: block;
+		position: absolute;
+		z-index: 2;
+		top: 15px;
+		left: initial;
+		right: 20px;
+		bottom: initial;
+		opacity: 1;
+		font-weight: normal;
+		line-height: 60%;
+		text-shadow: none;
+		transition: all 0.3s linear;
+		
+		@include breakpoint(tablet) {
+			font-size: 4em;
+			top: 20px;
+		}
+
+		&:focus {
+			outline: 0;
+		}
+
+		&:hover {
+			@include breakpoint(desktop) {
+				opacity: 0.3;
+			}
+		}
+	}
+}
